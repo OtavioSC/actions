@@ -1,0 +1,17 @@
+name: Greeting and Time Workflow
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+
+jobs:
+  test_schedule:
+    runs-on: ubuntu-latest
+    steps:
+      name: Say hello
+      run: echo "Hello, world!"
+    steps:
+      name: Say current time
+      run: date
+    steps:
+      name: Say goodbye
+      run: echo "Goodbye, world!"
