@@ -1,0 +1,24 @@
+name: Scheduled Hello World
+
+on:
+  schedule:
+    # Runs every 5 minutes
+    # Syntax: minute hour day month day-of-week
+    - cron: '*/5 * * * *'
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: Say Hello World
+        run: echo "Hello, World! The time is $(date)"
+      
+      # Optional: Add this step if you want to see the output in workflow logs
+      - name: Print current time
+        run: |
+          echo "Current time: $(date)"
+          echo "This workflow was triggered by a schedule event"
