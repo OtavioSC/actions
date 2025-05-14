@@ -1,9 +1,9 @@
 name: Issue Created
 
 on:
-  issues:
-    types:
-      - opened
+  push:
+    branches:
+      - main
 
 jobs:
   echo-author:
