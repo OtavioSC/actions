@@ -16,7 +16,7 @@ jobs:
           GITHUB_REF: ${{ github.ref_name }}
         run: | 
           GIT_HASH=$(echo $GITHUB_SHA | cut -c1-7)
-          GIT_BRANCH=$GITHUB_REF_NAME
+          GIT_BRANCH=$GITHUB_REF
           ALL=$(echo ${GIT_BRACH}_${GIT_HASH})
           echo "The issue was created on branch $ALL"
           echo "The issue was created by $GITHUB_USER"
