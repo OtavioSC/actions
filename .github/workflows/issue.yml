@@ -1,0 +1,16 @@
+name: Issue Created
+
+on:
+  issues:
+    types:
+      - opened
+
+jobs:
+  echo-author:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo Issue Author
+        env:
+          GITHUB_USER: ${{ github.event.issue.user.login }}
+        run: echo "The issue was created by $GITHUB_USER"
+        
